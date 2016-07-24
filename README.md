@@ -37,8 +37,8 @@ import com.mchange.sc.v2.yinyang._
 val YangBias = YinYang.YangBias.withEmptyToken[String]("EMPTY")
 import YangBias._
 
-val a : YinYang[String,Int] = Right(1)
-val b : YinYang[String,Int] = Right(99)
+val a : YinYang[String,Int] = Yang(1)
+val b : YinYang[String,Int] = Yang(99)
 
 for( v <- a; w <- b ) yield v+w          // Yang(100)
 for( v <- a; w <- b if v > 10) yield v+w // Yin(EMPTY)
